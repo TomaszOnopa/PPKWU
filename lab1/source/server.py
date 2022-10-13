@@ -18,7 +18,10 @@ class web_server(http.server.SimpleHTTPRequestHandler):
             self.send_header("Content-type", "text/html; charset=UTF-8")
             self.end_headers()            
             self.wfile.write(b"Hello World!\n")
-            self.wfile.write("Linia2\n")
+            
+            current_date = datetime.datetime.now()
+            
+            self.wfile.write(current_date)
         else:
             super().do_GET()
     
