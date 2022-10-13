@@ -20,8 +20,9 @@ class web_server(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(b"Hello World!\n")
             
             current_date = datetime.datetime.now()
+            current_date = str(current_date)
             
-            self.wfile.write(current_date)
+            self.wfile.write(current_date.encode())
         else:
             super().do_GET()
     
