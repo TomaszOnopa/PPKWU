@@ -5,7 +5,10 @@
 			echo date("H:i:s");
 		}
 		elseif ($_GET["cmd"] == "rev") {
-			
+			if (isset($_GET["str"]))
+				echo strrev($_GET["str"]);
+			else
+				echo "Brak parametru str";
 		}
 	}
 	else
