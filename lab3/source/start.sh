@@ -1,2 +1,2 @@
 #!/bin/bash
-php -S 0.0.0.0:4080
+python3 ./server.py
