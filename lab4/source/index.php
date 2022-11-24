@@ -9,7 +9,7 @@
 			echo json_encode(array(
 			"sum" => $num1+$num2,
 			"sub" => $num1-$num2,
-			"nul" => $num1*$num2,
+			"mul" => $num1*$num2,
 			"div" => (int)($num1/$num2),
 			"mod" => $num1%$num2));
 		}
