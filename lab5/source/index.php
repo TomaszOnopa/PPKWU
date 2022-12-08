@@ -1,1 +1,4 @@
-<?php echo "Hello World!\n"; ?>
+<?php
+	$data = file_get_contents('php://input');
+	echo $data;
+?>
