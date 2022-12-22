@@ -74,7 +74,7 @@
 			}
 	    	$special += 1;*/
 		}
-		echo xml_encode(array(
+		$data['root'][] = array(
 			"lowercase" => $lowercase,
 			"uppercase" => $uppercase,
 			"digit" => $digit,
@@ -83,7 +83,8 @@
 			"sub" => $num1-$num2,
 			"mul" => $num1*$num2,
 			"div" => (int)($num1/$num2),
-			"mod" => $num1%$num2));
+			"mod" => $num1%$num2);
+		echo xml_encode($data);
 	}
 	if (!isset($xml->num1) && !isset($xml->num1) && isset($xml->str)) {
 		$lowercase = 0;
@@ -108,19 +109,21 @@
 			}
 	    	$special += 1;*/
 		}
-		echo xml_encode(array(
+		$data['root'][] = array(
 			"lowercase" => $lowercase,
 			"uppercase" => $uppercase,
 			"digit" => $digit,
-			"special" => $special));
+			"special" => $special);
+		echo xml_encode($data);
 	}
 	
 	if (isset($xml->num1) && isset($xml->num1) && !isset($xml->str)) {
-		echo xml_encode(array(
+		$data['root'][] = array(
 			"sum" => $num1+$num2,
 			"sub" => $num1-$num2,
 			"mul" => $num1*$num2,
 			"div" => (int)($num1/$num2),
-			"mod" => $num1%$num2));
+			"mod" => $num1%$num2);
+		echo xml_encode($data);
 	}
 ?>
